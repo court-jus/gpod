@@ -1,1 +1,3 @@
 gpod/gpod/local_settings.py
+gpod/db.sqlite3
+gpod/media
