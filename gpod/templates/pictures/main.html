@@ -1,0 +1,10 @@
+{% load static %}
+<html>
+  <body>
+    <h1>Guess the picture of the day</h1>
+    <img src="{% static '28.jpg' %}" alt="Image" />
+    {% if picture %} {{ picture }} {% else %}
+    <p>No picture to guess now</p>
+    {% endif %}
+  </body>
+</html>
