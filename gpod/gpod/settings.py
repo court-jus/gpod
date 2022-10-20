@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "pictures",
+    "answers",
 ]
 
 MIDDLEWARE = [
@@ -129,4 +130,4 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 MEDIA_ROOT = "media"
-MEDIA_URL = "media/"
+MEDIA_URL = "http://127.0.0.1:1983/media/"

@@ -1,0 +1,4 @@
+:1983 {
+	root * /home/ghislain/src/gpod/gpod
+	file_server
+}

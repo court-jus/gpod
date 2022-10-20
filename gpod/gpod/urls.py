@@ -18,4 +18,7 @@ from django.urls import path
 
 from pictures.views import main_view
 
-urlpatterns = [path("admin/", admin.site.urls), path("", main_view)]
+urlpatterns = [
+    path("admin/", admin.site.urls),
+    path("", main_view),
+]

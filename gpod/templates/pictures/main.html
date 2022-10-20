@@ -1,9 +1,43 @@
 {% load static %}
 <html>
+  <style>
+    .img-container {
+      width: 300px;
+    }
+    img {
+      width: 100%;
+    }
+  </style>
   <body>
     <h1>Guess the picture of the day</h1>
-    <img src="{% static '28.jpg' %}" alt="Image" />
-    {% if picture %} {{ picture }} {% else %}
+    {% if imageurl %}
+    <div class="img-container">
+      <img src="{{ imageurl }}" alt="Image" />
+    </div>
+    <div class="guesses-container">
+      <h2>Last guesses</h2>
+      <ul>
+        {% for guess in last_guesses %}
+        <li>{{ guess.guess }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="form-container">
+      {% if errors %}
+      <ul>
+        {% for error in errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <form method="POST">
+        {% csrf_token %}
+        <input name="name" placeholder="Your name" type="text" />
+        <input name="guess" placeholder="Your guess" type="text" />
+        <button type="submit">Validate</button>
+      </form>
+    </div>
+    {% else %}
     <p>No picture to guess now</p>
     {% endif %}
   </body>
